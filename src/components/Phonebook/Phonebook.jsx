@@ -10,11 +10,6 @@ import { ContactsList } from '../ContactsList/ContactsList';
 import { Filter } from '../Filter/Filter';
 
 export class Phonebook extends Component {
-  static defaultProps = {
-    initialContacts: [],
-    initialFilter: '',
-  };
-
   static defaultPropTypes = {
     initialContacts: PropTypes.array.isRequired,
     initialFilter: PropTypes.string.isRequired,

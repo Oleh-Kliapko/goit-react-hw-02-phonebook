@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FormContainer, Input, Button, Label } from './ContactForm.styled';
 import { patternName, patternNumber } from '../../utils/patterns';
 import { messageForName, messageForNumber } from '../../utils/messages';
@@ -8,6 +9,11 @@ import { messageForName, messageForNumber } from '../../utils/messages';
 const INITIAL_STATE = { name: '', number: '' };
 
 export class ContactForm extends Component {
+  static defaultPropTypes = {
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  };
+
   state = INITIAL_STATE;
 
   handleChangeInput = evt => {
