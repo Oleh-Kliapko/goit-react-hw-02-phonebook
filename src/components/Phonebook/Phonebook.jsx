@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Notification } from '../../utils/notification';
 import { theme } from '../../utils/theme';
-import { nanoid } from 'nanoid';
 import { Box } from '../Box';
 import { WrapperPhonebook, WrapperContacts } from './Phonebook.styled';
 import { ContactForm } from '../ContactForm/ContactForm';
@@ -20,7 +19,7 @@ export class Phonebook extends Component {
     filter: this.props.initialFilter,
   };
 
-  addContacts = ({ name, number }) => {
+  addContacts = ({ id, name, number }) => {
     const addedName = name;
 
     for (const contact of this.state.contacts) {
@@ -30,7 +29,6 @@ export class Phonebook extends Component {
       }
     }
 
-    const id = nanoid(4);
     this.setState(({ contacts }) => ({
       contacts: [...contacts, { id, name, number }],
     }));
