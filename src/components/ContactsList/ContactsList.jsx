@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Item, DeleteButton } from './ContactsList.styled';
 import { nanoid } from 'nanoid';
 
@@ -11,4 +12,9 @@ export const ContactsList = ({ contacts, removeContact }) => {
       </DeleteButton>
     </Item>
   ));
+};
+
+ContactsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  removeContact: PropTypes.func,
 };
